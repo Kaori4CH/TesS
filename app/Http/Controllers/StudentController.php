@@ -8,23 +8,64 @@ class StudentController extends Controller
 {
     public function index()
     {
-        return "ini adalah halaman daftar siswa";
-
+        $title = "Sistem Sekolah - Daftar Siswa";
+        $students =
+            [
+                [
+                    'id' => 1,
+                    'nis' => '1001',
+                    'name' => 'Andi',
+                    'Class' => 'XII TKJ 1',
+                    'Major' => 'TKJ',
+                ],
+                [
+                    'id' => 2,
+                    'nis' => '1002',
+                    'name' => 'Budi',
+                    'Class' => 'XII AKL 1',
+                    'Major' => 'AKL',
+                ],
+            ];
+        return view(
+            'students.index',
+            [
+                'title' => $title,
+                'students' => $students
+            ]
+        );
     }
 
     public function show(string $id)
     {
-        return "ini adalah halaman detail siswa dengan ID: {$id}";
+        $title = "Sistem Sekolah - Detail Siswa";
+        return view(
+            'students.show',
+            [
+                'title' => $title
+            ]
+        );
     }
 
     public function create()
     {
-        return "ini adalah halaman tambah siswa";
+        $title = "Sistem Sekolah - Tambah Siswa";
+        return view(
+            'students.create',
+            [
+                'title' => $title
+            ]
+        );
     }
 
     public function edit(string $id)
     {
-        return "ini adalah halaman edit siswa dengan ID: {$id}";
+        $title = "Sistem Sekolah - Ubah Siswa";
+        return view(
+            'students.edit',
+            [
+                'title' => $title
+            ]
+        );
     }
 
     public function store()
@@ -32,7 +73,7 @@ class StudentController extends Controller
         return "menambah data siswa baru";
     }
 
-    public function update (string $id)
+    public function update(string $id)
     {
         return "mengubah data siswa dengan ID: {$id}";
     }
