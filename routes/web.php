@@ -50,7 +50,7 @@ Route::name('teachers.')->prefix('teachers')->group(function () {
     Route::delete('/{id}', [TeachersController::class, 'destroy'])->name('destroy');
 });
 
-Route::name('SchoolClass.')->prefix('SchoolClass')->group(function () {
+Route::name('classes.')->prefix('classes')->group(function () {
 
     Route::get('/', [IndexController::class])->name('index');
 

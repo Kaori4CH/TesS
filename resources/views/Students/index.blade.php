@@ -4,10 +4,7 @@
 
 @section ('content')
 
-        <div class="border border-red-500  bg-red-100 rounded-lg p-4 "> 
-            <h1> Eror </h1>
-            <p> Terdapat Kesalahan Ketika Menambahkan Data Siswa Baru Ke Dalam Sistem</p>
-        </div>
+
 
         <div class="mb-8 flex items-end justify-between border-b border-[#E5E3DB] pb-5">
 
@@ -91,9 +88,9 @@
 
                                 <div class="flex justify-end gap-4 text-xs font-medium">
 
-                                    <a href="" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
+                                    <a href="{{ route('students.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                                    <a href="" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
+                                    <a href="{{ route('students.edit', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
                                     <form action="" method="POST"
                                         onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
