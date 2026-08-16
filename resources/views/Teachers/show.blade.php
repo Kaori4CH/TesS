@@ -79,7 +79,11 @@
 
                     <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Status</dt>
 
-                    <dd class="font-medium text-[#16213A]">Aktif</dd>
+                   <dd>    
+                    <x-status-badge type="Aktif">
+       Aktif
+    </x-status-badge>
+</dd> 
 
                 </div>
 

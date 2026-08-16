@@ -93,11 +93,6 @@
     @method('DELETE')
     <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
 </form>
-
-                                        <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
-
-                                    </form>
-
                                 </div>
 
                             </td>

@@ -16,7 +16,7 @@
 
             </div>
 
-            <a href="{{ route('students.create') }}" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
+            <a href="{{ route('majors.create') }}" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
 
                 Catat Jurusan Baru
 
@@ -89,11 +89,6 @@
     @method('DELETE')
     <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
 </form>
-
-
-                                        <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
-
-                                    </form>
 
                                 </div>
 

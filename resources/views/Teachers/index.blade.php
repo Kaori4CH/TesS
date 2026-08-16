@@ -95,7 +95,7 @@
 
                             <td class="px-5 py-4">
 
-                                {{ $teacher['status'] }}
+                                <x-status-badge :status="$teacher['status']" />
 
                             </td>
 
@@ -112,11 +112,6 @@
     <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
 </form>
 
-
-
-                                        <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
-
-                                    </form>
 
                                 </div>
 
