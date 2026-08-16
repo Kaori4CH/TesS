@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\SchoolClass;
+namespace App\Http\Controllers\classes;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +12,12 @@ class CreateController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "ini adalah halaman tambah kelas";   
+              $title = "Sistem Sekolah - Tambah Kelas";
+        return view(
+            'classes.create',
+            [
+                'title' => $title
+            ]
+        );
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\SchoolClass;
+namespace App\Http\Controllers\classes;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +12,12 @@ class ShowController extends Controller
      */
     public function __invoke(Request $request, string $id)
     {
-        return "ini adalah halaman detail kelas dengan ID: {$id}";
+              $title = "Sistem Sekolah - Detail Kelas";
+        return view(
+            'classes.show',
+            [
+                'title' => $title
+            ]
+        );
     }
 }
