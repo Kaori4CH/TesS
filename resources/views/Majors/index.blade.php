@@ -79,13 +79,16 @@
 
                                 <div class="flex justify-end gap-4 text-xs font-medium">
 
-                                    <a href="{{ route('majors.show', ['major' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
+<a href="{{ route('majors.show', ['major' => $major['id']]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                                    <a href="{{ route('majors.edit', ['major' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
+<a href="{{ route('majors.edit', ['major' => $major['id']]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
-                                    <form action="" method="POST"
-                                        onsubmit="return confirm('Hapus data Jurusan ini dari buku induk?')">
-
+<form action="{{ route('majors.destroy', ['major' => $major['id']]) }}" method="POST"
+    onsubmit="return confirm('Hapus data Jurusan ini dari buku induk?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
+</form>
 
 
                                         <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>

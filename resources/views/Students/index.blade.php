@@ -88,13 +88,16 @@
 
                                 <div class="flex justify-end gap-4 text-xs font-medium">
 
-                                    <a href="{{ route('students.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
+  <a href="{{ route('students.show', ['id' => $student['id']]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                                    <a href="{{ route('students.edit', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
+<a href="{{ route('students.edit', ['id' => $student['id']]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
-                                    <form action="" method="POST"
-                                        onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
-
+<form action="{{ route('students.destroy', ['id' => $student['id']]) }}" method="POST"
+    onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
+</form>
 
 
                                         <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
