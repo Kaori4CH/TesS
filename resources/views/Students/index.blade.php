@@ -75,7 +75,7 @@
                             <td class="px-5 py-4">
 
                                 {{ $student['Class'] }}
-
+x
                             </td>
 
                             <td class="px-5 py-4">

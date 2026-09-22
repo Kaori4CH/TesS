@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
+    use HasClassData;
+
     /**
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
     {
-              $title = "Sistem Sekolah - Tambah Kelas";
-        return view(
-            'classes.create',
-            [
-                'title' => $title
-            ]
-        );
+        return view('classes.create', [
+            'title' => 'Sistem Sekolah - Tambah Kelas',
+            'majors' => $this->majors(),
+            'teachers' => $this->teachers(),
+        ]);
     }
 }

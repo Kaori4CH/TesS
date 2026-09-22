@@ -16,22 +16,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::name('students.')->prefix('students')->group(function () {
+    Route::name('students.')->prefix('students')->group(function () {
 
-    Route::get('/', [StudentController::class, 'index'])->name('index');
+        Route::get('/', [StudentController::class, 'index'])->name('index');
 
-    Route::get('/{id}', [StudentController::class, 'show'])->name('show')->whereNumber('id');
+        Route::get('/{id}', [StudentController::class, 'show'])->name('show')->whereNumber('id');
 
-    Route::get('/create', [StudentController::class, 'create'])->name('create');
+        Route::get('/create', [StudentController::class, 'create'])->name('create');
 
-    Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
+        Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
 
-    Route::post('/', [StudentController::class, 'store'])->name('store');
+        Route::post('/', [StudentController::class, 'store'])->name('store');
 
-    Route::put('/{id}', [StudentController::class, 'update'])->name('update');
+        Route::put('/{id}', [StudentController::class, 'update'])->name('update');
 
-    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
-});
+        Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
+    });
 
 Route::name('teachers.')->prefix('teachers')->group(function () {
 
@@ -60,11 +60,11 @@ Route::name('classes.')->prefix('classes')->group(function () {
 
     Route::get('/{id}/edit', EditController::class)->name('edit');
 
-    Route::post('/', [StoreController::class, 'store'])->name('store');
+    Route::post('/', StoreController::class)->name('store');
 
-    Route::put('/{id}', [UpdateController::class, 'update'])->name('update');
+    Route::put('/{id}', UpdateController::class)->name('update');
 
-    Route::delete('/{id}', [DestroyController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}', DestroyController::class)->name('destroy');
 });
 
 Route::resource('majors', MajorController::class);

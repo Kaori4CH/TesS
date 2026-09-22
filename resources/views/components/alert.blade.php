@@ -1,11 +1,14 @@
-@props(['status' => 'Aktif'])
+@props(['type' => 'INFO'])
 
-@if ($status === 'Aktif')
-    <span class="inline-block rounded-full px-3 py-1 text-xs font-medium bg-green-100 text-green-700 border border-green-300">
-        {{ $status }}
-    </span>
-@else
-    <span class="inline-block rounded-full px-3 py-1 text-xs font-medium bg-red-100 text-red-700 border border-red-300">
-        {{ $status }}
-    </span>
-@endif
+@php
+    $styles = match (strtoupper($type)) {
+        'SUCCESS' => 'bg-green-50 text-green-800 border-green-300',
+        'WARNING' => 'bg-yellow-50 text-yellow-800 border-yellow-300',
+        'DANGER', 'ERROR' => 'bg-red-50 text-red-800 border-red-300',
+        default => 'bg-slate-50 text-slate-700 border-slate-300',
+    };
+@endphp
+
+<div {{ $attributes->merge(['class' => 'mb-6 border px-4 py-3 text-sm ' . $styles]) }}>
+    {{ $slot }}
+</div>
